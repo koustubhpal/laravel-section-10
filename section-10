@@ -1,0 +1,66 @@
+SEND RAW MAIL
+-------------
+contact.blade.php
+<body class="bg-gray-100flex items-center justify-center-full">
+method="POST"
+action="/content"
+class="bg-white p-6rounded shadow-md"
+style="width:300px";
+@csrf
+<div class="mb-5">
+<label>
+for="email"
+class="block text-xs uppercase font-mb"
+email address
+<label>
+<label>
+for="email"
+class="block text-xs uppercase font-mb"
+submit
+<label>
+
+contact.controller.php
+----------------------
+
+namespace APP\Http\controllers;
+class contactcontroller extended controller;
+{
+public function show()
+{
+return view('contact');
+}
+public 
+
+unction store()
+{
+request()->validate(['email'=requested\email"]);
+}
+}
+mail::raw('okay'),function($message){
+$message->to(request('email'))->subject('hi');});
+}
+}
+
+return rederceet('/contact')->with('message','email/sent');
+}
+}
+[MAILTRIP]
+
+php artisan make:mail
+
+
+-----------------------
+
+public function build()
+{
+return $this->markdown('email.controller.php')->subject('more info')
+}
+
+
+
+contact_me.blade.php
+---------------------
+@component('mail::message');
+php artisan help make:mail
+php artisan vendor:publish --tag=laravel-mail
+
